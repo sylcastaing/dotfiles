@@ -1,0 +1,37 @@
+[user]
+  name = Sylvain Castaing
+  email = {{ .git.personal.email }}
+  signingkey = {{ .git.personal.signingkey }}
+
+[core]
+  editor = nvim
+  excludesFile = ~/.gitignore_global
+
+[gpg]
+  program = gpg
+
+[commit]
+  gpgsign = true
+  template = ~/.gitmessage
+
+[alias]
+  co  = checkout
+  s   = status
+  pl  = pull
+  ps  = push
+  psf = push --force
+  b   = branch
+  c   = commit
+  a   = add
+  d   = diff
+  lg  = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+
+[pull]
+  rebase  = true
+
+[log]
+  follow  = true
+
+[includeIf "gitdir/i:{{ .git.work.dir }}"]
+  path = ~/.gitconfig.work
+

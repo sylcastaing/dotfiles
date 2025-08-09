@@ -1,0 +1,32 @@
+if status is-interactive
+end
+
+# envs
+set -gx EDITOR nvim
+set -gx VOLTA_HOME $HOME/.volta
+
+# paths
+fish_add_path -p $VOLTA_HOME/bin
+
+{{ if eq .chezmoi.os "darwin" }}
+fish_add_path -p /opt/homebrew/bin
+fish_add_path -p /opt/homebrew/sbin
+fish_add_path -a "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+{{ else }}
+fish_add_path -a "$HOME/.local/share/JetBrains/Toolbox/scripts"
+{{ end }}
+
+# alias
+alias vim="nvim"
+alias cd="z"
+alias ls="lsd"
+alias ll="lsd -lh"
+alias lll="yazi"
+alias cat="bat"
+alias htop="btop"
+
+# zoxide
+zoxide init fish | source
+
+# starship
+starship init fish | source
