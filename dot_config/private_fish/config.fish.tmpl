@@ -4,6 +4,7 @@ end
 # envs
 set -gx EDITOR nvim
 set -gx VOLTA_HOME $HOME/.volta
+set -gx GPG_TTY=$(tty)
 
 # paths
 fish_add_path -p $VOLTA_HOME/bin

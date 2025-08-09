@@ -1,0 +1,50 @@
+#!/bin/sh
+
+{{ if eq .chezmoi.os "darwin" -}}
+
+brew install \
+  bat \
+  btop \
+  chezmoi \
+  colima \
+  docker \
+  docker-buildx \
+  docker-clean \
+  docker-completion \
+  docker-compose \
+  docker-credential-helper \
+  fd \
+  fish \
+  fzf \
+  gettext \
+  git \
+  gnupg \
+  lsd \
+  neovim \
+  pinentry-mac \
+  starship \
+  yazi \
+  zoxide
+
+brew install --cask \
+  arc \
+  font-jetbrains-mono-nerd-font \
+  google-chrome \
+  jetbrains-toolbox \
+  kitty \
+  logi-options+ \
+  notion \
+  postman \
+  raycast \
+  rectangle \
+  spotify \
+  todoist-app
+
+{{ if eq .type "work" }}
+brew install --cask \
+  microsoft-outlook \
+  microsoft-teams \
+  slack \
+{{ end }}
+
+{{ end -}}
