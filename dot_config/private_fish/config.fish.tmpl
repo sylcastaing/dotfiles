@@ -4,7 +4,7 @@ end
 # envs
 set -gx EDITOR nvim
 set -gx VOLTA_HOME $HOME/.volta
-set -gx GPG_TTY=$(tty)
+set -gx GPG_TTY $(tty)
 
 # paths
 fish_add_path -p $VOLTA_HOME/bin
@@ -25,6 +25,7 @@ alias ll="lsd -lh"
 alias lll="yazi"
 alias cat="bat"
 alias htop="btop"
+alias diff="delta"
 
 # zoxide
 zoxide init fish | source

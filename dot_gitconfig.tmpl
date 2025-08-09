@@ -1,3 +1,6 @@
+[include]
+	path = ~/.config/delta/catppuccin.gitconfig
+
 [user]
   name = Sylvain Castaing
   email = {{ .git.personal.email }}
@@ -6,6 +9,7 @@
 [core]
   editor = nvim
   excludesFile = ~/.gitignore_global
+  pager = delta
 
 [gpg]
   program = gpg
@@ -17,23 +21,36 @@
 [tag]
   gpgSign = true
 
-[alias]
-  co  = checkout
-  s   = status
-  pl  = pull
-  ps  = push
-  psf = push --force
-  b   = branch
-  c   = commit
-  a   = add
-  d   = diff
-  lg  = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
+  dark = true
+  features = catppuccin-mocha
+  side-by-side = true
+
+[merge]
+  conflictStyle = zdiff
 
 [pull]
   rebase  = true
 
 [log]
   follow  = true
+
+[alias]
+  a   = add
+  b   = branch
+  c   = commit
+  co  = checkout
+  d   = diff
+  lg  = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+  pl  = pull
+  ps  = push
+  psf = push --force
+  r   = rebase
+  s   = status
 
 [includeIf "gitdir/i:{{ .git.work.dir }}"]
   path = ~/.gitconfig.work
