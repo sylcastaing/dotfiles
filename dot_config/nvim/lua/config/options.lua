@@ -3,4 +3,4 @@
 -- Add any additional options here
 
 vim.opt.listchars = 'space:·,tab:->"'
-vim.opt.relativenumber = false
+vim.opt.statuscolumn = "%s %{v:lnum} %{v:relnum} "
