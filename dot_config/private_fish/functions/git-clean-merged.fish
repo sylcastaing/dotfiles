@@ -1,4 +1,4 @@
-function git_clean_merged --description "Delete all local Git branches already merged into the specified branch (default: main)"
+function git-clean-merged --description "Delete all local Git branches already merged into the specified branch (default: main)"
     set -l base_branch main
     if test (count $argv) -gt 0
         set base_branch $argv[1]
