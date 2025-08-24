@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 function generate-completions --description "Generate fish completions for specified commands"
     switch $argv[1]
         case docker

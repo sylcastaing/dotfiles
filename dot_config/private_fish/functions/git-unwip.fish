@@ -1,4 +1,4 @@
-#!/usr/bin/fish
+#!/usr/bin/env fish
 
 function git-unwip -d "Reset the last WIP commit and restore changes to the staged area"
     set last_commit_msg (git log -1 --pretty=%B)
