@@ -43,17 +43,5 @@ return {
         which_key = true,
       },
     },
-    specs = {
-      {
-        "akinsho/bufferline.nvim",
-        -- https://github.com/LazyVim/LazyVim/pull/6354#issuecomment-3202799735
-        init = function()
-          local bufline = require("catppuccin.groups.integrations.bufferline")
-          function bufline.get()
-            return bufline.get_theme()
-          end
-        end,
-      },
-    },
   },
 }
