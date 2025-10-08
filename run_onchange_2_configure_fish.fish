@@ -4,5 +4,6 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 
 fisher install jorgebucaran/fisher
 fisher install catppuccin/fish
+fisher install icezyclon/zoxide.fish
 
 fish_config theme save "Catppuccin Mocha"
